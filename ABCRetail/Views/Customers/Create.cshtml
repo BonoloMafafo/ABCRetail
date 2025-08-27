@@ -1,0 +1,65 @@
+﻿@model ABCRetail.Models.Customer
+@{
+    ViewData["Title"] = "Create Customer";
+}
+
+<section class="container py-4 text-white">
+    <h1 class="display-6 mb-3"><i class="bi bi-person-plus-fill me-2"></i>Create Customer</h1>
+
+    <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+    <!-- IMPORTANT: enctype for file uploads -->
+    <form asp-action="Create" method="post" class="row g-3" enctype="multipart/form-data">
+        <div class="col-md-6">
+            <label asp-for="FirstName" class="form-label fw-semibold">First name</label>
+            <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-person"></i></span>
+                <input asp-for="FirstName" class="form-control" />
+            </div>
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-6">
+            <label asp-for="LastName" class="form-label fw-semibold">Last name</label>
+            <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-person"></i></span>
+                <input asp-for="LastName" class="form-control" />
+            </div>
+            <span asp-validation-for="LastName" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-6">
+            <label asp-for="Email" class="form-label fw-semibold">Email</label>
+            <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                <input asp-for="Email" class="form-control" />
+            </div>
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-6">
+            <label asp-for="Address" class="form-label fw-semibold">Address</label>
+            <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-geo-alt"></i></span>
+                <input asp-for="Address" class="form-control" />
+            </div>
+            <span asp-validation-for="Address" class="text-danger"></span>
+        </div>
+
+        <!-- NEW: file to be saved in Azure File Share (customerfiles/attachments) -->
+        <div class="col-md-6">
+            <label class="form-label fw-semibold">File (optional)</label>
+            <input type="file" name="attachment" class="form-control" />
+            <small class="text-muted"> </small>
+        </div>
+
+        <div class="col-12 d-flex gap-2 mt-2">
+            <button class="btn cta-btn"><i class="bi bi-check2-circle me-2"></i>Save</button>
+            <a asp-action="Index" class="btn btn-ghost"><i class="bi bi-arrow-left me-2"></i>Back</a>
+        </div>
+    </form>
+
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+    }
+</section>

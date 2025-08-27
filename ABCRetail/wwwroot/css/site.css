@@ -1,0 +1,214 @@
+:root {
+    --brand: #ff6b00;
+    --brand-dark: #e65f00;
+    --ink: #1f2937;
+    --muted: #6b7280;
+    --bg-hero: radial-gradient(1200px 600px at 10% -10%, rgba(255,107,0,.25), transparent), radial-gradient(900px 600px at 90% 0%, rgba(255,255,255,.06), transparent), #0b0f19;
+}
+
+body {
+    font-family: "Inter", system-ui, ...;
+    color: #ffffff; /* make text white */
+    background: #0d1117;
+}
+
+/* ensure tables inherit white text */
+.table, .table td, .table th {
+    color: #ffffff;
+}
+
+.form-control, .form-select {
+    color: #111;
+    background-color: #fff;
+}
+
+
+h1, h2, h3, .display-1, .display-2, .display-3 {
+    font-family: "Poppins", "Inter", sans-serif;
+    color: #fff;
+    font-weight: 800;
+    letter-spacing: .2px;
+}
+
+.navbar-brand strong {
+    font-weight: 800;
+    letter-spacing: .3px;
+}
+
+.navbar .nav-link {
+    font-weight: 600;
+}
+
+.logo-iso {
+    filter: drop-shadow(0 8px 20px rgba(255,107,0,.35));
+}
+
+.footer {
+    background: #0b0f19;
+    border-top: 1px solid rgba(255,255,255,.06);
+}
+
+.hero {
+    background: var(--bg-hero);
+    position: relative;
+    overflow: hidden;
+}
+
+    .hero .content {
+        padding: clamp(56px, 8vw, 120px) 0;
+    }
+
+.badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    background: rgba(255,255,255,.06);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 999px;
+    padding: .35rem .75rem;
+    font-weight: 600;
+}
+
+.cta-btn {
+    background: var(--brand);
+    border: none;
+    font-weight: 700;
+    padding: .8rem 1.2rem;
+    border-radius: .75rem;
+    box-shadow: 0 10px 24px rgba(255,107,0,.35);
+}
+
+    .cta-btn:hover {
+        background: var(--brand-dark);
+    }
+
+.btn-ghost {
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,.2);
+    padding: .8rem 1.2rem;
+    border-radius: .75rem;
+    font-weight: 700;
+}
+
+    .btn-ghost:hover {
+        background: rgba(255,255,255,.08);
+    }
+
+.feature-card {
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 1rem;
+    padding: 1.25rem;
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+    .feature-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(255,107,0,.45);
+        box-shadow: 0 12px 30px rgba(255,107,0,.12);
+    }
+
+.feature-icon {
+    display: inline-flex;
+    width: 42px;
+    height: 42px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: linear-gradient(135deg,#ff6b00,#ff9f4d);
+    color: #fff;
+    font-size: 1.2rem;
+    box-shadow: 0 6px 18px rgba(255,107,0,.35);
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 1rem;
+    padding: 1rem 1.25rem;
+    text-align: center;
+}
+
+    .stat .num {
+        font-size: clamp(24px, 4vw, 40px);
+        font-weight: 800;
+        color: #fff;
+    }
+
+    .stat .label {
+        color: #cbd5e1;
+        font-weight: 600;
+        letter-spacing: .3px;
+    }
+
+.text-muted-2 {
+    color: #cbd5e1;
+}
+
+/* === Customers table + avatar helpers (add at end of site.css) === */
+
+/* Slight divider line for rows on dark bg */
+.table-row-elevated {
+    border-bottom: 1px solid rgba(255,255,255,.06);
+}
+
+/* Make table headers easier to read on dark bg */
+.table thead th {
+    color: #e5e7eb;
+}
+
+/* Optional: soften zebra striping on dark theme */
+.table-striped > tbody > tr:nth-of-type(odd) {
+    --bs-table-accent-bg: rgba(255,255,255,.03);
+    color: inherit;
+}
+
+/* Avatar with initials (used in Customers list) */
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    background: linear-gradient(135deg,#ff6b00,#ff9f4d);
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(255,107,0,.35);
+}
+
+/* === Products helpers === */
+.sku-badge {
+    display: inline-block;
+    font-weight: 700;
+    letter-spacing: .3px;
+    border-radius: 999px;
+    padding: .2rem .55rem;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.08);
+}
+
+.price-pill {
+    display: inline-block;
+    font-weight: 800;
+    padding: .2rem .55rem;
+    border-radius: .5rem;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.08);
+}
+
+/* Small image thumbnail in tables */
+.thumb {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: .5rem;
+    border: 1px solid rgba(255,255,255,.1);
+    box-shadow: 0 8px 16px rgba(0,0,0,.3);
+}
+
